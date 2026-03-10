@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arb ETH 存取</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .balance {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .form {
+            margin: 20px 0;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            margin: 10px 0;
+        }
+        .success {
+            color: green;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Arb ETH 存取</h1>
+        
+        <div class="balance">
+            <button id="connect-btn">连接钱包</button>
+            <h3>钱包余额: <span id="wallet-balance">0</span> ETH</h3>
+            <h3>合约余额: <span id="contract-balance">0</span> ETH</h3>
+        </div>
+        
+        <div class="form">
+            <h3>存入 ETH</h3>
+            <input type="number" id="deposit-amount" placeholder="输入金额 (ETH)" step="0.0001">
+            <button id="deposit-btn">存入</button>
+        </div>
+        
+        <div class="form">
+            <h3>取出 ETH</h3>
+            <input type="number" id="withdraw-amount" placeholder="输入金额 (ETH)" step="0.0001">
+            <button id="withdraw-btn">取出</button>
+        </div>
+        
+        <div id="message"></div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.6.0/dist/ethers.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
